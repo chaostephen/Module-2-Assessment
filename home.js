@@ -22,7 +22,9 @@
 */
 
 //CODE HERE
+const greetUser=username=>`Welcome back, ${username}`
 
+//console.log(greetUser("Andrew"))
 
 
 
@@ -50,8 +52,15 @@
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
-
-
+const canWeDeliver=zipCode=>{
+    if(deliveryAreaZipCodes.includes(zipCode)){
+        return `You're in our delivery zone!`
+    } else {
+        return `Sorry, we can't deliver to that address`
+    }
+}
+// console.log(canWeDeliver(85205))
+// console.log(canWeDeliver(08055))
 
 /* 
     Problem 2 Continued
@@ -69,6 +78,16 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
     loop (for loop, higher order array method).
     Name your new function `canWeDeliverTwo`.
 */
+function canWeDeliverTwo(zipCode){
+    for(let i =0; i<deliveryAreaZipCodes.length;i++){
+        if(deliveryAreaZipCodes[i]===zipCode){
+            return `You're in our delivery zone!`
+        }
+        return `Sorry, we can't deliver to that address`
+    }
+}
+// console.log(canWeDeliverTwo(85205))
+// console.log(canWeDeliverTwo(08055))
 
 // CODE HERE
 
@@ -105,7 +124,8 @@ const deals = [
     to be itself, but use the `replace` method
     to replace the 15 with a 10.
 */
-
+deals[0].title=deals[0].title.replace('15','10')
+// console.log(deals)
 //CODE HERE
 
 
@@ -122,5 +142,6 @@ const deals = [
     whitespace in this string, since it seems
     to be displaying wrong on the live site.
 */
-
+deals[1].desc=deals[1].desc.trim().replace("March","April")
+// console.log(deals)
 //CODE HERE

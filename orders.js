@@ -28,6 +28,19 @@
     Where CUSTOMERID and STATUS reference the values
     stored on the object.
 */
+class Ticket{
+    constructor(items, orderTime, customerID){
+        this.items=items;
+        this.orderTime=orderTime;
+        this.customerID=customerID;
+        this.status="queued";
+    }
+    updateStatus(newStatus){
+        this.status=newStatus
+        console.log(`The order for customer ${this.customerID} is now ${this.status}`)
+    }
+}
+
 
 //CODE HERE
 
@@ -43,7 +56,7 @@
     ordered at: 7:03 PM
     customer: 575
 */
-
+const firstTicket= new Ticket(["pizza", "bread", "soda"],"7:03 PM",575);
 //CODE HERE
 
 
@@ -52,5 +65,6 @@
     `firstTicket` passing in the string
     'cooking'
 */
-
+firstTicket.updateStatus("cooking")
+// console.log(firstTicket)
 //CODE HERE

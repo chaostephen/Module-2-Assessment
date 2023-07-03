@@ -18,27 +18,36 @@
     Where NAME and SHIFTS reference the values
     stored on the object.
 */
-
+class Employee{
+    constructor(names,shifts){
+        this.names=names;
+        this.shifts=shifts;
+    }
+    getSchedule(){
+        console.log(`${this.names} works on ${this.shifts}`)
+    }
+}
 //CODE HERE
 
 
-
 /*
-    Create a new instance of your class.
-    Save it to a variable called `empOne`.
+Create a new instance of your class.
+Save it to a variable called `empOne`.
 
-    You can use this sample data or make
-    up your own:
-    name: Jess
-    shifts: weekday mornings, weekday afternoons
+You can use this sample data or make
+up your own:
+name: Jess
+shifts: weekday mornings, weekday afternoons
 */
+let empOne=new Employee("John", ["weekday mornings","weekday afternoons"])
 
 //CODE HERE
 
 /*
-    Call the `getSchedule` method on the
-    `empOne` object.
+Call the `getSchedule` method on the
+`empOne` object.
 */
+empOne.getSchedule()
 
 //CODE HERE
 
@@ -54,9 +63,10 @@
     spread operator or reassign it using 
     dot or bracket notation.
 */
-
+const empTwo={...empOne}
+empTwo.names="Nick"
 //CODE HERE
-
+console.log(empTwo)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -81,7 +91,18 @@
     The function should push the name into 
     the employees array. 
 */
-
+class Manager extends Employee{
+    constructor(names, shifts,employees){
+        super(names, shifts)
+        this.employees=employees
+    }
+    getEmployees(){
+        console.log(`${this.names} manages ${this.employees}`)
+    }
+    addEmployee(emp){
+        this.employees.push(emp)
+    }
+}
 //CODE HERE
 
 
@@ -96,7 +117,7 @@
     shifts: weekday mornings, weekday afternoons
     employees: Cece and Schmidt
 */
-
+const manager=new Manager("Winston", ["weekday mornings", "weekday afternoons"], ["Cece", "Schmidt"])
 //CODE HERE
 
 
@@ -104,7 +125,7 @@
     Call the `getEmployees` method on the
     `manager` object.  
 */
-
+manager.getEmployees()
 //CODE HERE
 
 /*
@@ -113,12 +134,12 @@
     'Coach' or whatever name you'd like.
 */
 
-//CODE HERE 
+manager.addEmployee("Coach")//CODE HERE 
 
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
     that an employee was added.
 */
-
+manager.getEmployees()
 //CODE HERE

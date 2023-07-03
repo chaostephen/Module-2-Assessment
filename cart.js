@@ -35,7 +35,8 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((a,b)=>a +b.price,0)
+console.log(summedPrice)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -52,7 +53,9 @@ const cart = [
     Note: the numbers passed in for `tax` will be
     decimals, for example: .06 for a 6% tax.
 */
-
+function calcFinalPrice(cartTotal, couponValue, tax){
+    return cartTotal*(1+tax)-couponValue
+}
 //CODE HERE
 
 
@@ -79,12 +82,21 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
-
+    Customer will need orderTotal(integer), couponValue(integer), order(string), discount(decimal)
+    orderTotal should be an integer because it adds up all the food the customer ordered
+    couponValue should be an integer because it should remove the amount of the coupon
+    order should be a string because it is what the customer orders for the kitchen to deliver
+    discount is a decimal and is a savings applied to employees, service members, etc.
 */
 
 /*
     Now, create a customer object following your own
     guidelines.
 */
-
+const customer={
+    order:"lasagna",
+    orderTotal:15,
+    couponValue:0,
+    discount:.1
+}
 //CODE HERE
