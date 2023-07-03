@@ -206,9 +206,15 @@ function filterByProperty(property, number, type){
                 result.push(foodArr[i])
             }
         }
-    } else {
+    } else if (type==="below") {
         for(let i = 0; i<foodArr.length;i++){
             if(foodArr[i][property]<number){
+                result.push(foodArr[i])
+            }
+        }
+    } else {
+        for(let i =0; i<foodArr.length;i++){
+            if(foodArr[i][property]===number){
                 result.push(foodArr[i])
             }
         }
@@ -216,7 +222,7 @@ function filterByProperty(property, number, type){
 })
     return result;
 }
-console.log(filterByProperty("rating", 10, "above"))      
+console.log(filterByProperty("rating", 12, ""))      
 //CODE HERE
 
 
@@ -226,8 +232,8 @@ console.log(filterByProperty("rating", 10, "above"))
 
     You'll have to console.log to see the filtered array
 */
-console.log(filterByProperty("price", 24, "above"))      
-console.log(filterByProperty("popularity", 12, "above"))      
+// console.log(filterByProperty("price", 24, "above"))      
+// console.log(filterByProperty("popularity", 12, "above"))      
      
 
 
